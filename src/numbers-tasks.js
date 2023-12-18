@@ -416,8 +416,8 @@ function toPrecision(number, precision) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(/* number */) {
-  throw new Error('Not implemented');
+function getNumberValue(number) {
+  return valueOf(number);
 }
 
 /**
@@ -435,8 +435,8 @@ function getNumberValue(/* number */) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(number) {
+  return Number.isFinite(number) && !Number.isNaN(number);
 }
 
 /**
@@ -464,8 +464,8 @@ function isInteger(number) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
+function getFloatOnString(str) {
+  return parseFloat(str);
 }
 
 /**
@@ -635,8 +635,14 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  if (number === 0) return 0;
+  if (number === 1) return 1;
+  let count = 0;
+  for (let i = 2; i <= number; i += 1) {
+    if (i % 2 !== 0) count += 1;
+  }
+  return count;
 }
 
 module.exports = {
