@@ -205,12 +205,14 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(/* n */) {
-  /* if (n === 2) return true;
-  for (let i = 2; i < Math.sqrt(n) + 1; i + 1) {
-    if (n % i === 0) return false;
+  /*
+  if (n <= 1 || (n % 2 == 0 && n !== 2)) return false;
+
+  for (let i = 3; i < Math.floor(Math.sqrt(n)) + 1; i + 2) {
+    if (n % i == 0) return false;
   }
-  return true; */
-  throw new Error('Not implemented');
+  return true;
+  */
 }
 
 /**
@@ -482,8 +484,8 @@ function getFloatOnString(str) {
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
+function getIntegerOnString(str, base) {
+  return Number.parseInt(str, base);
 }
 
 /**
@@ -635,14 +637,16 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(number) {
+function getCountOfOddNumbers(/* number */) {
+  /*
   if (number === 0) return 0;
   if (number === 1) return 1;
   let count = 0;
   for (let i = 2; i <= number; i += 1) {
     if (i % 2 !== 0) count += 1;
   }
-  return count;
+  return count; 
+  */
 }
 
 module.exports = {
